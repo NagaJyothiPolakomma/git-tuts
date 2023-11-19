@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/getrecords" name="Getrecords_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <property expression="json-eval($)" name="body" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:body" name="body"/>
+            </log>
+            <property expression="$ctx:body//requestPayload/*[name()='Advance_API']" name="firstelement" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:firstelement" name="firstelement==>"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

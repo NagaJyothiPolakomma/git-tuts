@@ -1,0 +1,11 @@
+---
+key: "Getrecords_API-1.0.0"
+name : "Getrecords_API"
+displayName : "Getrecords_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/getrecords"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

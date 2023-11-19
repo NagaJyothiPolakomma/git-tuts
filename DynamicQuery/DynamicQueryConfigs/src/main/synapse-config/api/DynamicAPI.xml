@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/dynamicAPI" name="DynamicAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST">
+        <inSequence>
+            <log/>
+            <property expression="json-eval($)" name="payload" scope="default" type="STRING"/>
+            <property expression="get-property('file','apiregistry')" name="apiregistry" scope="default" type="STRING"/>
+            <log level="custom">
+                <property expression="$ctx:apiregistry" name="file"/>
+            </log>
+            <class name="com.knot.uol.mediators.DynamicXMLQueryMediator"/>
+            <payloadFactory media-type="json">
+                <format>{&#xd;
+"Response From DataBase " : &#xd;
+{$1}&#xd;
+&#xd;
+}</format>
+                <args>
+                    <arg evaluator="xml" expression="$ctx:response"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

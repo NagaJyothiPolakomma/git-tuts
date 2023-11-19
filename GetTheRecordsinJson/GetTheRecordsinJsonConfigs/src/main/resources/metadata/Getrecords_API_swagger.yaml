@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Getrecords_API
+  description: API Definition of Getrecords_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/getrecords
+paths:
+  /:
+    post:
+      responses:
+        default:
+          description: Default response

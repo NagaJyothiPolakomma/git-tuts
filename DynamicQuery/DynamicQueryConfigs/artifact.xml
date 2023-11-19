@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="DynamicAPI" groupId="com.dynamic.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/DynamicAPI.xml</file>
+    </artifact>
+    <artifact name="DynamicAPI_swagger" groupId="com.dynamic.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DynamicAPI_swagger.yaml</file>
+    </artifact>
+    <artifact name="DynamicAPI_metadata" groupId="com.dynamic.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/DynamicAPI_metadata.yaml</file>
+    </artifact>
+</artifacts>
