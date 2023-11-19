@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="KYC_Calling_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/KYC_Calling_API.xml</file>
+    </artifact>
+    <artifact name="KYC_Calling_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/KYC_Calling_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="KYC_Calling_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/KYC_Calling_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="MSISDN_Validation_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MSISDN_Validation_API.xml</file>
+    </artifact>
+    <artifact name="MSISDN_Validation_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MSISDN_Validation_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="MSISDN_Validation_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MSISDN_Validation_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="MAH_Status_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/MAH_Status_API.xml</file>
+    </artifact>
+    <artifact name="MAH_Status_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MAH_Status_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="MAH_Status_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/MAH_Status_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Pending_Request_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Pending_Request_API.xml</file>
+    </artifact>
+    <artifact name="Pending_Request_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Pending_Request_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Pending_Request_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Pending_Request_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="/Deposit_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Deposit_API.xml</file>
+    </artifact>
+    <artifact name="/Deposit_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Deposit_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="/Deposit_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Deposit_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Advance_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Advance_API.xml</file>
+    </artifact>
+    <artifact name="Advance_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Advance_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Advance_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Advance_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Barring_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Barring_API.xml</file>
+    </artifact>
+    <artifact name="Barring_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Barring_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Barring_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Barring_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Deposite_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Deposite_API.xml</file>
+    </artifact>
+    <artifact name="Deposite_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Deposite_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Deposite_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Deposite_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="Advance_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Advance_API_EP.xml</file>
+    </artifact>
+    <artifact name="Barring_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Barring_API_EP.xml</file>
+    </artifact>
+    <artifact name="Deposite_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Deposite_API_EP.xml</file>
+    </artifact>
+    <artifact name="KYC_Calling_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/KYC_Calling_API_EP.xml</file>
+    </artifact>
+    <artifact name="MAH_Status_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/MAH_Status_API_EP.xml</file>
+    </artifact>
+    <artifact name="MSISDN_Validation_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/MSISDN_Validation_API_EP.xml</file>
+    </artifact>
+    <artifact name="Pending_Request_API_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/Pending_Request_API_EP.xml</file>
+    </artifact>
+    <artifact name="Clone_Aggregate_API" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Clone_Aggregate_API.xml</file>
+    </artifact>
+    <artifact name="Clone_Aggregate_API_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Clone_Aggregate_API_swagger.yaml</file>
+    </artifact>
+    <artifact name="Clone_Aggregate_API_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/Clone_Aggregate_API_metadata.yaml</file>
+    </artifact>
+    <artifact name="faultSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/faultSequence.xml</file>
+    </artifact>
+    <artifact name="CheckValidationStatusSequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/CheckValidationStatusSequence.xml</file>
+    </artifact>
+    <artifact name="DynamicQueryCall_EP" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/DynamicQueryCall_EP.xml</file>
+    </artifact>
+    <artifact name="Advance_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Advance_API_Seq.xml</file>
+    </artifact>
+    <artifact name="Barring_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Barring_API_Seq.xml</file>
+    </artifact>
+    <artifact name="Deposite_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Deposite_API_Seq.xml</file>
+    </artifact>
+    <artifact name="KYC_Calling_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/KYC_Calling_API_Seq.xml</file>
+    </artifact>
+    <artifact name="MAH_Status_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MAH_Status_API_Seq.xml</file>
+    </artifact>
+    <artifact name="MSISDN_Validation_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/MSISDN_Validation_API_Seq.xml</file>
+    </artifact>
+    <artifact name="Pending_Request_API_Seq" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/Pending_Request_API_Seq.xml</file>
+    </artifact>
+</artifacts>

@@ -1,0 +1,17 @@
+openapi: 3.0.1
+info:
+  title: Clone_Aggregate_API
+  description: API Definition of Clone_Aggregate_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/Clone_Aggregate
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response
+    post:
+      responses:
+        default:
+          description: Default response

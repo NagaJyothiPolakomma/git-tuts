@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: MAH_Status_API
+  description: API Definition of MAH_Status_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/mahstatus
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

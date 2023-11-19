@@ -1,0 +1,11 @@
+---
+key: "MAH_Status_API-1.0.0"
+name : "MAH_Status_API"
+displayName : "MAH_Status_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/mahstatus"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

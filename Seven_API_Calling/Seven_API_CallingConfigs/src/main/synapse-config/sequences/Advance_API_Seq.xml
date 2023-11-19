@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="Advance_API_Seq" onError="faultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <call>
+        <endpoint key="Advance_API_EP"/>
+    </call>
+</sequence>

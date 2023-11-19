@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: Deposite_API
+  description: API Definition of Deposite_API
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/deposite
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response

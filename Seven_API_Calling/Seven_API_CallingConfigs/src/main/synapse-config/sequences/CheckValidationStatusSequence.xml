@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="CheckValidationStatusSequence" onError="faultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- Set the initial value of the global property -->
+    <property name="eligibility_status" scope="default" type="STRING" value="true"/>
+    <!-- Iterate over the list of objects -->
+    <log level="custom">
+        <property expression="$body/*" name="Before Iterate==>"/>
+    </log>
+    <iterate continueParent="true" expression="//jsonElement" sequential="true">
+        <target>
+            <sequence>
+                <log level="custom">
+                    <property expression="//validateStatus" name="In the Iterate==>"/>
+                </log>
+                <property expression="//validateStatus" name="validateStatus" scope="default" type="STRING"/>
+                <script language="js"><![CDATA[var log = mc.getServiceLog();
+                var validatestatus = mc.getProperty('validateStatus');
+                  var eligibilitystatus = mc.getProperty('eligibility_status');
+                  
+                  if (validatestatus == 'false') {
+                  log.info("if true");
+                     mc.setProperty('eligibility_status', 'false');
+                     mc.setProperty('stopIteration', 'true');
+                  }]]></script>
+            </sequence>
+        </target>
+    </iterate>
+    <!-- Check the stopIteration property and generate the final response -->
+    <log level="custom">
+        <property expression="$body/*" name="after iterate block==>"/>
+    </log>
+    <filter regex="true" source="get-property('stopIteration')">
+        <then>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>
+               {
+                  "eligibilitystatus": "$1",
+                  "response": $2
+               }
+            </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('eligibility_status')"/>
+                    <arg evaluator="xml" expression="//jsonElement"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </then>
+        <else>
+            <property name="messageType" scope="axis2" type="STRING" value="application/json"/>
+            <payloadFactory media-type="json">
+                <format>
+               {
+                  "eligibilitystatus": "$1",
+                  "response": $2
+               }
+            </format>
+                <args>
+                    <arg evaluator="xml" expression="get-property('eligibility_status')"/>
+                    <arg evaluator="xml" expression="//jsonElement"/>
+                </args>
+            </payloadFactory>
+            <respond/>
+        </else>
+    </filter>
+</sequence>

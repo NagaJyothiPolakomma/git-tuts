@@ -1,0 +1,11 @@
+---
+key: "Barring_API-1.0.0"
+name : "Barring_API"
+displayName : "Barring_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/barring"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

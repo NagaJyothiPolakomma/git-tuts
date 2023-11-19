@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/Clone_Aggregate" name="Clone_Aggregate_API" xmlns="http://ws.apache.org/ns/synapse">
+    <resource faultSequence="faultSequence" methods="POST GET">
+        <inSequence>
+            <call>
+                <endpoint key="DynamicQueryCall_EP"/>
+            </call>
+            <log level="custom">
+                <property expression="json-eval($)" name="DynamicQueryResponse==>"/>
+            </log>
+            <enrich>
+                <source clone="true" type="body"/>
+                <target property="DynamicQueryResponse" type="property"/>
+            </enrich>
+            <payloadFactory media-type="json">
+                <format>$1</format>
+                <args>
+                    <arg evaluator="json" expression="$.response[0]"/>
+                </args>
+            </payloadFactory>
+            <log level="custom">
+                <property expression="//scenario" name="scenario"/>
+            </log>
+            <script language="js"><![CDATA[// Get the JSON object from the message context
+        var jsonPayload = mc.getPayloadJSON();
+
+        var count = 0;
+
+        for (var key in jsonPayload) {
+            if (jsonPayload[key] === "Y") {
+                count++;
+            }
+        }
+
+        // Set the count in a property for future use
+        mc.setProperty("CountWithY", count);]]></script>
+            <log level="custom">
+                <property expression="$ctx:CountWithY" name="CountWithY"/>
+                <property expression="//advance" name="advance"/>
+            </log>
+            <filter regex="0.0" source="get-property('CountWithY')">
+                <then>
+                    <log level="custom">
+                        <property name="get-property('CountWithY')===>" value="0"/>
+                    </log>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+$1,&#xd;
+"Msg":"There is no eligibility check for this scenario"&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:DynamicQueryResponse"/>
+                        </args>
+                    </payloadFactory>
+                    <respond/>
+                </then>
+                <else>
+                    <log level="custom">
+                        <property name="get-property('CountWithY')==>" value="Not 0"/>
+                    </log>
+                    <clone id="cloneMediator_1" sequential="true">
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//advance">
+                                    <then>
+                                        <log level="custom">
+                                            <property name="//advance" value="True"/>
+                                        </log>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="Advance_API"/>
+                                        <sequence key="Advance_API_Seq"/>
+                                    </then>
+                                    <else>
+                                        <log level="custom">
+                                            <property name="//advance" value="False"/>
+                                        </log>
+                                    </else>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//barring">
+                                    <then>
+                                        <log level="custom">
+                                            <property name="//barring" value="True"/>
+                                        </log>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="Barring_API"/>
+                                        <sequence key="Barring_API_Seq"/>
+                                    </then>
+                                    <else>
+                                        <log level="custom">
+                                            <property name="//barring" value="False"/>
+                                        </log>
+                                    </else>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//deposit">
+                                    <then>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="Deposit_API"/>
+                                        <sequence key="Deposite_API_Seq"/>
+                                    </then>
+                                    <else/>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//kyc_check">
+                                    <then>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="KYC_Calling_API"/>
+                                        <sequence key="KYC_Calling_API_Seq"/>
+                                    </then>
+                                    <else/>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//mah_status">
+                                    <then>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="MAH_Status_API"/>
+                                        <sequence key="MAH_Status_API_Seq"/>
+                                    </then>
+                                    <else/>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//msisdn_validation">
+                                    <then>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="MSISDN_Validation_API"/>
+                                        <sequence key="MSISDN_Validation_API_Seq"/>
+                                    </then>
+                                    <else/>
+                                </filter>
+                            </sequence>
+                        </target>
+                        <target>
+                            <sequence>
+                                <filter regex="Y" source="//pending_reports">
+                                    <then>
+                                        <property description="API_Name" name="API_Name" scope="default" type="STRING" value="Pending_Request_API"/>
+                                        <sequence key="Pending_Request_API_Seq"/>
+                                    </then>
+                                    <else/>
+                                </filter>
+                            </sequence>
+                        </target>
+                    </clone>
+                    <payloadFactory media-type="json">
+                        <format>{&#xd;
+"$1":$2&#xd;
+}</format>
+                        <args>
+                            <arg evaluator="xml" expression="$ctx:API_Name"/>
+                            <arg evaluator="json" expression="$"/>
+                        </args>
+                    </payloadFactory>
+                    <aggregate id="cloneMediator_1">
+                        <completeCondition>
+                            <messageCount max="{get-property('CountWithY')}" min="{get-property('CountWithY')}"/>
+                        </completeCondition>
+                        <onComplete aggregateElementType="root" expression="json-eval($)">
+                            <log level="custom">
+                                <property expression="json-eval($)" name="InAggre==>"/>
+                            </log>
+                            <script language="js"><![CDATA[var log = mc.getServiceLog();
+                            var responses = mc.getPayloadJSON();
+                            var eligibilitystatus = true;
+                            for(var i=0; i<responses.length; i++){
+                            	 for(var key in responses[i]){
+                            		var validateStatus=responses[i][key].validateStatus;
+                            		/*  log.info("API_Name==> "+key);
+                            		log.info("dot notation==> "+validateStatus); */
+                            		if (validateStatus === false){
+                            			
+                            			eligibilitystatus = false;
+                            			break;
+                            		}
+                            	} 
+                    			if (eligibilitystatus === false) {
+            						break;
+        						}                	
+                            	
+                            	
+                            }   
+                            /*log.info("eligibilitystatus==> "+eligibilitystatus);
+                            responses.push({ "eligibilitystatus": eligibilitystatus });
+                            mc.setPayloadJSON(responses); */
+                            
+                            mc.setProperty("eligibilitystatus",eligibilitystatus);]]></script>
+                            <payloadFactory media-type="json">
+                                <format>{&#xd;
+"eligibilitystatus":$2,&#xd;
+$1&#xd;
+}</format>
+                                <args>
+                                    <arg evaluator="json" expression="$"/>
+                                    <arg evaluator="xml" expression="$ctx:eligibilitystatus"/>
+                                </args>
+                            </payloadFactory>
+                            <respond/>
+                        </onComplete>
+                    </aggregate>
+                </else>
+            </filter>
+        </inSequence>
+        <outSequence/>
+    </resource>
+</api>

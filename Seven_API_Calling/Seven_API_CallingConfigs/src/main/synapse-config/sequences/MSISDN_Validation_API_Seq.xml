@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="MSISDN_Validation_API_Seq" onError="faultSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <call>
+        <endpoint key="MSISDN_Validation_API_EP"/>
+    </call>
+</sequence>

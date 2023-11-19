@@ -1,0 +1,11 @@
+---
+key: "KYC_Calling_API-1.0.0"
+name : "KYC_Calling_API"
+displayName : "KYC_Calling_API"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/kyccalling"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"
