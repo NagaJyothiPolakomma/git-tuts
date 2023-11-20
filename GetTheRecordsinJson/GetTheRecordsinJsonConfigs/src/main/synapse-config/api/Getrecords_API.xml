@@ -10,11 +10,10 @@
             <log level="custom">
                 <property expression="$ctx:firstelement" name="firstelement==>"/>
             </log>
-  <log level="custom">
-                <property value="reddy" name="firstelement==>"/>
+            <log level="custom">
+                <property value="ayyappa" name="firstelement==>"/>
             </log>
-
-        </inSequence>
+   </inSequence>
         <outSequence/>
         <faultSequence/>
     </resource>
